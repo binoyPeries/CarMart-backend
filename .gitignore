@@ -1,0 +1,6 @@
+**/__pycache__
+**/.idea
+static
+.vscode/*
+!webapp/static
+db.sqlite3
