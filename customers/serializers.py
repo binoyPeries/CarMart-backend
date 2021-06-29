@@ -20,7 +20,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         if not last_name.isalnum():
             raise serializers.ValidationError('The last name can only contain alphanumerics')
 
-        if len(contact_no) < 10:
+        if len(str(contact_no)) < 10:
             raise serializers.ValidationError('The contact number is invalid')
 
         return attrs
