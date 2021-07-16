@@ -1,10 +1,9 @@
 from rest_framework.generics import ListCreateAPIView
-from rest_framework.viewsets import ModelViewSet
-from .serializers import VehicleSerializer
-from .models import Vehicle
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
-from rest_framework.decorators import parser_classes
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
+from .models import Vehicle
+from .serializers import VehicleSerializer
 
 
 # @parser_classes((FormParser,))
