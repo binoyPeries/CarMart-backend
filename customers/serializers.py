@@ -36,7 +36,15 @@ class LoginSerializer(serializers.ModelSerializer):
     password = serializers.CharField(max_length=68, min_length=6, write_only=True)
     first_name = serializers.CharField(max_length=225, read_only=True)
     last_name = serializers.CharField(max_length=225, read_only=True)
-    tokens = serializers.CharField(max_length=225, min_length=6, read_only=True)
+    tokens = serializers.SerializerMethodField()
+
+    def get_tokens(self, obj):
+        user = Customer.objects.get(email=obj['email'])
+
+        return {
+            'access': user.tokens()['access'],
+            'refresh': user.tokens()['refresh']
+        }
 
     class Meta:
         model = Customer
