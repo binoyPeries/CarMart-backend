@@ -4,4 +4,4 @@ static
 .vscode/*
 !webapp/static
 db.sqlite3
-.env
+carmart_backend/.env
