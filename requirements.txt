@@ -6,10 +6,13 @@ charset-normalizer==2.0.2
 colorama==0.4.4
 coreapi==2.3.3
 coreschema==0.0.4
+dj-database-url==0.5.0
 Django==3.2.5
+django-heroku==0.3.1
 djangorestframework==3.12.4
 djangorestframework-simplejwt==4.7.2
 drf-yasg==1.20.0
+gunicorn==20.1.0
 idna==3.2
 inflection==0.5.1
 iniconfig==1.1.1
@@ -19,6 +22,7 @@ MarkupSafe==2.0.1
 packaging==21.0
 Pillow==8.3.1
 pluggy==0.13.1
+psycopg2==2.9.1
 py==1.10.0
 PyJWT==2.1.0
 pyparsing==2.4.7
@@ -31,3 +35,4 @@ sqlparse==0.4.1
 toml==0.10.2
 uritemplate==3.0.1
 urllib3==1.26.6
+whitenoise==5.2.0
