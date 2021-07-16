@@ -42,9 +42,9 @@ class Vehicle(models.Model):
     engine_capacity = models.PositiveSmallIntegerField()
     transmission = models.CharField(max_length=7, choices=VEHICLE_TRANS_CHOICE, default='manual')
     description = models.TextField(null=True)
-    front = models.ImageField()
-    back = models.ImageField()
-    interior = models.ImageField()
+    front = models.ImageField(upload_to="front/", blank=True)
+    back = models.ImageField(upload_to="back/", blank=True)
+    interior = models.ImageField(upload_to="interior/", blank=True)
 
     def __str__(self):
         return str(self.customer)
