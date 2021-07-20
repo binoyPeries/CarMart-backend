@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'customers',
     'drf_yasg',
     'vehicles',
+    'cloudinary_storage',
     'rest_framework_simplejwt.token_blacklist',
 ]
 
@@ -147,10 +148,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "binz",
+    "API_KEY": "665419228931596",
+    "API_SECRET": "k1Acan4_4e3qwbPJAmEH5_UBBo0"
+
+}
