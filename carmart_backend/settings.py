@@ -14,10 +14,7 @@ from pathlib import Path
 import os
 import datetime
 import django_heroku
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s9pt6j4-#zb0qkqqhd_)e=w4)%qxu=s=%(8$qd@k^r#aw-pf(m'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -155,8 +152,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "binz",
-    "API_KEY": "665419228931596",
-    "API_SECRET": "k1Acan4_4e3qwbPJAmEH5_UBBo0"
+    "CLOUD_NAME": config('CLOUD_NAME'),
+    "API_KEY": config('API_KEY'),
+    "API_SECRET": config('API_SECRET')
 
 }
