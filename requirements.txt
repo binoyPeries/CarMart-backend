@@ -24,7 +24,7 @@ Jinja2==3.0.1
 MarkupSafe==2.0.1
 ordereddict==1.1
 packaging==21.0
-Pillow==8.3.2
+Pillow==9.0.0
 pluggy==0.13.1
 psycopg2==2.9.1
 py==1.10.0
